@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { FaGlobeAsia } from "react-icons/fa";
-import "../styles/prediction.css";
+import "../styles/Prediction.css";
 
 export default function Prediction() {
   const [city, setCity] = useState("");
