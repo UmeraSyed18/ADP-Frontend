@@ -1,0 +1,182 @@
+.safetyhub-container {
+  padding: 2rem;
+  max-width: 1280px;
+  margin: auto;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* HERO SECTION */
+.safetyhub-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  background-color: var(--color-surface);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.safetyhub-hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.safetyhub-hero-text h1 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.safetyhub-hero-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-muted);
+  margin-bottom: 0.8rem;
+}
+
+.safetyhub-hero-image {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.safetyhub-hero-image img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.safetyhub-hero-image img:hover {
+  transform: scale(1.05);
+}
+
+/* DISASTER SECTION */
+.safetyhub-disaster {
+  margin-bottom: 4rem;
+}
+
+.safetyhub-disaster h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.safetyhub-disaster-image {
+  display: block;
+  margin: 0 auto 2rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.safetyhub-disaster-image:hover {
+  transform: scale(1.04);
+}
+
+/* EACH SECTION (Before / During / After) */
+.safetyhub-section h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin: 2rem 0 1rem;
+  text-align: left;
+}
+
+/* CARD GRID */
+.safetyhub-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* INDIVIDUAL TIP CARD */
+.safetyhub-tip-card {
+  background: var(--color-surface);
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid var(--color-bg);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.safetyhub-tip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.safetyhub-tip-card .icon {
+  font-size: 1.6rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.safetyhub-tip-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.safetyhub-tip-card p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* QUIZ BUTTONS */
+.safetyhub-quiz-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.safetyhub-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.safetyhub-btn.earthquake {
+  background-color: var(--color-earthquake);
+}
+.safetyhub-btn.earthquake:hover {
+  background-color: #ea580c;
+  transform: scale(1.05);
+}
+
+.safetyhub-btn.wildfire {
+  background-color: var(--color-wildfire);
+}
+.safetyhub-btn.wildfire:hover {
+  background-color: #dc2626;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 768px) {
+  .safetyhub-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .safetyhub-hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .safetyhub-hero-image img {
+    max-width: 100%;
+  }
+}

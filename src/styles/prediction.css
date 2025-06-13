@@ -1,0 +1,273 @@
+.prediction-section {
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  min-height: 100vh;
+  margin: auto;
+  font-family: var(--font-main);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.prediction-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.prediction-header-icon {
+  font-size: 1.8rem;
+}
+
+.prediction-intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.prediction-hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.prediction-hero-text {
+  flex: 1;
+}
+
+.prediction-hero-text h2 {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.prediction-hero-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.prediction-hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.prediction-hero-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.prediction-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.prediction-autocomplete {
+  flex: 2;
+  position: relative;
+}
+
+.prediction-autocomplete input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.prediction-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid #ddd;
+  border-top: none;
+  z-index: 10;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.prediction-suggestions li {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+
+.prediction-suggestions li:hover {
+  /* background-color: #f4f4f4; */
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.prediction-form select {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.prediction-form button {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.prediction-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.prediction-error {
+  color: red;
+  margin-top: 1rem;
+}
+
+.prediction-results {
+  background: var(--color-primary);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+}
+
+.prediction-results h2 {
+  font-size: 1.5rem;
+  color: var(--color-surface);
+  margin-bottom: 1.5rem;
+}
+
+.prediction-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.prediction-grid p {
+  background: var(--color-surface);
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.prediction-location {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--color-surface);
+}
+
+.prediction-footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 1rem auto;
+}
+
+.double-bounce1,
+.double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  animation-delay: -1s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.prediction-loading-box {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- Media Queries ---------- */
+@media screen and (max-width: 992px) {
+  .prediction-hero-text h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .prediction-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .prediction-hero-text,
+  .prediction-hero-image {
+    width: 100%;
+  }
+
+  .prediction-hero-image img {
+    max-width: 100%;
+  }
+
+  .prediction-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .prediction-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .prediction-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .prediction-intro,
+  .prediction-hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .prediction-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .prediction-form button {
+    width: 100%;
+  }
+}

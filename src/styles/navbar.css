@@ -1,0 +1,466 @@
+/* .navbar-wrapper {
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar-container {
+  width: 90%;
+  margin: auto;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links li a {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-links li a:hover {
+  color: var(--color-accent);
+}
+
+.navbar-menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+  padding: 0;
+}
+
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms ease, stroke-dashoffset 600ms ease;
+}
+
+.line1 {
+  stroke-dasharray: 60 207;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+}
+
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+}
+
+.navbar-toggles {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.navbar-switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.navbar-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.navbar-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #dcdcdc;
+  transition: 0.4s;
+  border-radius: 999px;
+}
+
+.navbar-slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  top: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: 0.4s;
+  z-index: 1;
+}
+
+.navbar-switch input:checked + .navbar-slider:before {
+  transform: translateX(16px);
+}
+
+.navbar-slider.dark {
+  background-color: #9ca3af;
+}
+.navbar-switch input:checked + .navbar-slider.dark {
+  background-color: #000000;
+}
+
+.navbar-slider.colorblind {
+  background-color: #93c5fd;
+}
+.navbar-switch input:checked + .navbar-slider.colorblind {
+  background-color: #2563eb;
+}
+
+.navbar-slider.dyslexia {
+  background-color: #ddd6fe;
+}
+
+.navbar-switch input:checked + .navbar-slider.dyslexia {
+  background-color: #7c3aed;
+}
+
+.navbar-mobile-panel {
+  display: none;
+}
+
+@media (max-width: 1250px) {
+  .navbar-wrapper {
+    z-index: 9999;
+  }
+
+  .navbar-links,
+  .navbar-toggles.desktop {
+    display: none;
+  }
+
+  .navbar-menu {
+    position: relative;
+    display: flex;
+    z-index: 9999;
+  }
+
+  .navbar-mobile-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    padding: 6rem 2rem 2rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar-mobile-panel.show {
+    transform: translateY(0%);
+  }
+
+  .navbar-links-open {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .navbar-links-open li a {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .navbar-toggles.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+}
+
+body.menu-open {
+  overflow: hidden;
+} */
+
+/* ------------------------------
+   Navbar Wrapper & Container
+--------------------------------*/
+.navbar-wrapper {
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar-container {
+  width: 90%;
+  margin: auto;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ------------------------------
+   Logo
+--------------------------------*/
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+/* ------------------------------
+   Desktop Links
+--------------------------------*/
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links li a {
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: var(--color-primary);
+}
+
+/* ------------------------------
+   Burger Menu (Squeeze Style)
+--------------------------------*/
+.navbar-menu {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+  padding: 0;
+}
+
+.line {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms ease, stroke-dashoffset 600ms ease;
+}
+
+.line1 {
+  stroke-dasharray: 60 207;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+}
+
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+}
+
+/* ------------------------------
+   Toggles Section
+--------------------------------*/
+.navbar-toggles {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* ------------------------------
+   Switch Toggles
+--------------------------------*/
+.navbar-switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.navbar-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.navbar-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-muted);
+  transition: 0.4s;
+  border-radius: 999px;
+}
+
+.navbar-slider:before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  top: 3px;
+  background-color: var(--color-surface);
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.navbar-switch input:checked + .navbar-slider:before {
+  transform: translateX(16px);
+}
+
+/* Toggle Themes */
+.navbar-slider.dark {
+  background-color: #64748b;
+}
+.navbar-switch input:checked + .navbar-slider.dark {
+  background-color: var(--color-text);
+}
+
+.navbar-slider.colorblind {
+  background-color: #93c5fd;
+}
+.navbar-switch input:checked + .navbar-slider.colorblind {
+  background-color: var(--color-primary);
+}
+
+.navbar-slider.dyslexia {
+  background-color: #ddd6fe;
+}
+.navbar-switch input:checked + .navbar-slider.dyslexia {
+  background-color: #7c3aed;
+}
+
+/* ------------------------------
+   Mobile Panel (Sliding Menu)
+--------------------------------*/
+.navbar-mobile-panel {
+  display: none;
+}
+
+@media (max-width: 1250px) {
+  .navbar-links,
+  .navbar-toggles.desktop {
+    display: none;
+  }
+
+  .navbar-menu {
+    display: flex;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .navbar-mobile-panel {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-surface);
+    backdrop-filter: blur(10px);
+    padding: 6rem 2rem 2rem;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: transform 0.4s ease-in-out;
+    z-index: 999;
+  }
+
+  .navbar-mobile-panel.show {
+    transform: translateY(0%);
+  }
+
+  .navbar-links-open {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    width: 100%;
+  }
+
+  .navbar-links-open li a {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .navbar-links-open li a:hover {
+    color: var(--color-danger);
+  }
+
+  .navbar-toggles.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+}
+
+/* ------------------------------
+   Prevent Scroll on Mobile Menu Open
+--------------------------------*/
+body.menu-open {
+  overflow: hidden;
+}

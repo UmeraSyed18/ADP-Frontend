@@ -1,39 +1,30 @@
-import React, { useEffect, useState } from "react";
-import PredictionForm from "./components/PredictionForm";
-import ResultCard from "./components/ResultCard";
-import "./styles/Home.css";
-import { motion } from "framer-motion";
-import { FaServer } from "react-icons/fa";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Prediction from "./pages/Prediction";
+import About from "./pages/About";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Reports from "./pages/Reports";
+import SafetyHub from "./pages/SafetyHub";
+import EarthquakeQuiz from "./pages/EarthquakeQuiz";
+import WildfireQuiz from "./pages/WildfireQuiz";
 
-const App = () => {
-  const [apiStatus, setApiStatus] = useState("Checking...");
-  const [result, setResult] = useState(null);
-  // const baseURL = "http://127.0.0.1:5000";
-  const baseURL = "https://adp-backend-ecto.onrender.com";
-
-  useEffect(() => {
-    fetch(baseURL)
-      .then((res) => res.text())
-      .then((text) => setApiStatus(text))
-      .catch(() => setApiStatus("API not reachable"));
-  }, []);
-
+function App() {
   return (
-    <motion.div
-      className="home-container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      <h1 className="home-title">🌍 AI Disaster Prediction</h1>
-      <p className="api-status">
-        <FaServer style={{ marginRight: "8px" }} />
-        {apiStatus}
-      </p>
-      <PredictionForm setResult={setResult} />
-      {result && <ResultCard data={result} />}
-    </motion.div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/predict" element={<Prediction />} />
+        <Route path="/impact-reports" element={<Reports />} />
+        <Route path="/safety-hubs" element={<SafetyHub />} />
+        <Route path="/earthquake-quiz" element={<EarthquakeQuiz />} />
+        <Route path="/wildfire-quiz" element={<WildfireQuiz />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
-};
+}
 
 export default App;

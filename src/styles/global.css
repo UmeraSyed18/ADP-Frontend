@@ -1,0 +1,104 @@
+/* ------------------------------
+   Global Variables & Base Theme
+--------------------------------*/
+:root {
+  /* Default Mode Colors */
+  --color-bg: #f9fafb;
+  --color-surface: #ffffff;
+
+  --color-primary: #1e3a8a; /* Deep Blue */
+  --color-secondary: #10b981; /* Emerald Green */
+  --color-warning: #f59e0b; /* Warm Amber */
+  --color-danger: #dc2626; /* Crimson Red */
+
+  --color-text: #111827; /* Charcoal Black */
+  --color-muted: #6b7280; /* Slate Gray */
+
+  --color-earthquake: #fb923c; /* Orange (custom) */
+  --color-wildfire: #f87171; /* Red (custom) */
+
+  --font-main: "Inter", "Roboto", "Lato", sans-serif;
+  --font-dyslexic: "OpenDyslexic", "Segoe UI", sans-serif;
+}
+
+/* ------------------------------
+   Colorblind Mode (Safe for Deuteranopia & Protanopia)
+--------------------------------*/
+.colorblind-mode {
+  --color-bg: #f4f4f4;
+  --color-surface: #ffffff;
+
+  --color-primary: #4b0082; /* Indigo */
+  --color-secondary: #008080; /* Teal Blue */
+  --color-warning: #ffd700; /* Gold */
+  --color-danger: #000080; /* Navy */
+
+  --color-text: #000000; /* Jet Black */
+  --color-muted: #4b4b4b;
+
+  --color-earthquake: #0284c7; /* Cyan as alternative to orange */
+  --color-wildfire: #22c55e; /* Bright green for contrast */
+}
+
+/* ------------------------------
+   Dyslexia Mode
+--------------------------------*/
+.dyslexia-mode {
+  font-family: var(--font-dyslexic);
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+  line-height: 1.75;
+}
+
+/* ------------------------------
+   Dark Mode
+--------------------------------*/
+.dark-mode {
+  --color-bg: #0f172a; /* Navy Black */
+  --color-surface: #1e293b; /* Deep Slate */
+
+  --color-primary: #38bdf8; /* Light Cyan Blue */
+  --color-secondary: #10b981;
+  --color-warning: #fbbf24;
+  --color-danger: #ef4444;
+
+  --color-text: #e2e8f0; /* Light gray-blue */
+  --color-muted: #94a3b8;
+
+  --color-earthquake: #fbbf24;
+  --color-wildfire: #ef4444;
+}
+
+/* ------------------------------
+   Base Reset & Layout
+--------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease, font-family 0.3s ease;
+}
+
+/* ------------------------------
+   Base Element Normalization
+--------------------------------*/
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
