@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaChartLine, FaClipboardList } from "react-icons/fa";
-import "../styles/Home.css";
+import "../styles/home.css";
 
 export default function Home() {
   return (
