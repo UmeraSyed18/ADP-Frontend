@@ -103,18 +103,18 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
+            <Link to="/impact-reports" onClick={toggleMenu}>
+              Impact Reports
+            </Link>
+          </li>
+          <li>
+            <Link to="/safety-hubs" onClick={toggleMenu}>
+              Safety Hubs
+            </Link>
+          </li>
+          <li>
             <Link to="/about" onClick={toggleMenu}>
               About
-            </Link>
-          </li>
-          <li>
-            <Link to="/news" onClick={toggleMenu}>
-              News
-            </Link>
-          </li>
-          <li>
-            <Link to="/awareness" onClick={toggleMenu}>
-              Awareness Tips
             </Link>
           </li>
         </ul>

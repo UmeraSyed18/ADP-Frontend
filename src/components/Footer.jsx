@@ -1,93 +1,63 @@
 import { Link } from "react-router-dom";
-import {
-  FaGlobeAsia,
-  FaEnvelope,
-  FaPhoneAlt,
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaGlobeAsia } from "react-icons/fa";
 import "../styles/footer.css";
+import { IoMdArrowDropright } from "react-icons/io";
 
 export default function Footer() {
   return (
-    <footer className="footer-wrapper">
-      <div className="footer-container">
-        {/* Brand */}
-        <div className="footer-column">
-          <h2 className="footer-logo">
-            <FaGlobeAsia className="footer-icon" />
-            DisasterPredict
-          </h2>
-          <p>AI-powered predictions for Earthquakes and Wildfires.</p>
-          <div className="footer-contact">
-            <p>
-              <FaEnvelope className="footer-icon" />
-              support@disasterpredict.ai
-            </p>
-            <p>
-              <FaPhoneAlt className="footer-icon" />
-              911
+    <footer className="footer-new">
+      <div className="footer-new-inner">
+        <div className="footer-brand-block">
+          <FaGlobeAsia className="footer-brand-icon" />
+          <div>
+            <h2 className="footer-brand-name">DisasterPredict</h2>
+            <p className="footer-brand-desc">
+              Accurate AI predictions for Earthquakes and Wildfires to help
+              communities stay safe.
             </p>
           </div>
         </div>
 
-        {/* Quick Links */}
-        <div className="footer-column">
-          <h4>Quick Links</h4>
-          <ul>
+        <div className="footer-links-block">
+          <h4 className="footer-links-title">Explore</h4>
+          <ul className="footer-links-list">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">
+                <IoMdArrowDropright /> Home
+              </Link>
             </li>
             <li>
-              <Link to="/predict">Prediction</Link>
+              <Link to="/predict">
+                <IoMdArrowDropright />
+                Prediction
+              </Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/impact-reports">
+                <IoMdArrowDropright />
+                Impact Reports
+              </Link>
             </li>
             <li>
-              <Link to="/news">News</Link>
+              <Link to="/safety-hubs">
+                <IoMdArrowDropright />
+                Safety Hubs
+              </Link>
             </li>
             <li>
-              <Link to="/awareness">Awareness Tips</Link>
+              <Link to="/about">
+                <IoMdArrowDropright />
+                About
+              </Link>
             </li>
           </ul>
-        </div>
-
-        {/* Legal */}
-        <div className="footer-column">
-          <h4>Legal</h4>
-          <ul>
-            <li>
-              <Link to="/privacy-policy">Privacy Policy</Link>
-            </li>
-            <li>
-              <Link to="/terms-and-conditions">Terms & Conditions</Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Social Media */}
-        <div className="footer-column">
-          <h4>Connect</h4>
-          <div className="footer-social">
-            <a href="#">
-              <FaFacebookF />
-            </a>
-            <a href="#">
-              <FaTwitter />
-            </a>
-            <a href="#">
-              <FaInstagram />
-            </a>
-          </div>
         </div>
       </div>
 
-      {/* Bottom */}
-      <div className="footer-bottom">
+      <div className="footer-new-bottom">
         <p>
-          © {new Date().getFullYear()} DisasterPredict. All rights reserved.
+          © {new Date().getFullYear()} DisasterPredict. Built for awareness and
+          preparedness.
         </p>
       </div>
     </footer>

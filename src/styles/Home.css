@@ -68,11 +68,11 @@
   overflow: hidden;
   width: 300px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .home-step:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px) !important;
 }
 
 .home-step img {

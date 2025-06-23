@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaChartLine, FaClipboardList } from "react-icons/fa";
 import "../styles/Home.css";
+import locationimg from "../assets/home/location.png";
+import riskimg from "../assets/home/risk.png";
+import prepareimg from "../assets/home/prepare.png";
 
 export default function Home() {
   return (
@@ -39,7 +42,7 @@ export default function Home() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
         >
-          <Link to="/prediction" className="home-button">
+          <Link to="/predict" className="home-button">
             Get Started
           </Link>
         </motion.div>
@@ -62,10 +65,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <img
-              src="https://picsum.photos/300/200?1"
-              alt="Enter your location"
-            />
+            <img src={locationimg} alt="Enter your location" />
             <div>
               <FaMapMarkerAlt className="home-step-icon" />
               <h4>Enter Your Location</h4>
@@ -80,10 +80,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <img
-              src="https://picsum.photos/300/200?2"
-              alt="See your risk score"
-            />
+            <img src={riskimg} alt="See your risk score" />
             <div>
               <FaChartLine className="home-step-icon" />
               <h4>See Your Risk Score</h4>
@@ -98,7 +95,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <img src="https://picsum.photos/300/200?3" alt="Stay prepared" />
+            <img src={prepareimg} alt="Stay prepared" />
             <div>
               <FaClipboardList className="home-step-icon" />
               <h4>Stay Prepared</h4>
@@ -113,8 +110,8 @@ export default function Home() {
       {/* Disclaimer */}
       <footer className="home-disclaimer">
         <p>
-          These probabilities are model-based estimates. Always follow guidance
-          from local authorities and professional agencies.
+          Disclaimer: These probabilities are model-based estimates. Always
+          follow guidance from local authorities and professional agencies.
         </p>
       </footer>
     </div>
