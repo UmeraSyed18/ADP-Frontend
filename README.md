@@ -1,12 +1,30 @@
-# React + Vite
+# AI Disaster Prediction — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React + Vite web app that predicts earthquake and wildfire risks using AI, offers safety guidance, and helps users prepare through interactive features.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🌍 Enter a city and get AI-predicted earthquake and wildfire risk (30 & 60 day probabilities)
+- 📋 Safety Hub with actionable before, during, and after checklists for each disaster
+- ✅ Interactive Quizzes for Earthquake and Wildfire safety (shows correct/incorrect answers with reasons)
+- 📰 News & Awareness section to stay updated
+- ♿ Accessibility support (Dark mode, Dyslexia font, Colorblind mode)
+- 🔎 Fully responsive design optimized for mobile and desktop
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 18 + Vite
+- Framer Motion (animations)
+- React Router v6
+- Custom CSS with theme variables
+- REST API integration (from backend)
+- Deployed on Vercel
+
+## Setup Instructions
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/UmeraSyed18/ADP-Frontend.git
+cd ADP-Frontend
+```
