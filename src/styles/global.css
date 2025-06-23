@@ -14,8 +14,8 @@
   --color-text: #111827; /* Charcoal Black */
   --color-muted: #6b7280; /* Slate Gray */
 
-  --color-earthquake: #eb8220;
-  --color-wildfire: #dc2626;
+  --color-earthquake: #10b981;
+  --color-wildfire: #f97316;
 
   --font-main: "Inter", "Roboto", "Lato", sans-serif;
   --font-dyslexic: "OpenDyslexic", "Segoe UI", sans-serif;
@@ -36,8 +36,8 @@
   --color-text: #000000; /* Jet Black */
   --color-muted: #4b4b4b;
 
-  --color-earthquake: #10b981;
-  --color-wildfire: #3b82f6;
+  --color-earthquake: #00796b;
+  --color-wildfire: #e25822;
 }
 
 /* ------------------------------
@@ -65,8 +65,8 @@
   --color-text: #e2e8f0; /* Light gray-blue */
   --color-muted: #94a3b8;
 
-  --color-earthquake: #eb8220;
-  --color-wildfire: #ef4444;
+  --color-earthquake: #34d399;
+  --color-wildfire: #fb923c;
 }
 
 /* ------------------------------
