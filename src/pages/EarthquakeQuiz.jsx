@@ -4,56 +4,62 @@ import "../styles/Quiz.css";
 
 const questions = [
   {
-    question: "What is one important step to take before an earthquake?",
+    question:
+      "What should you do first during an earthquake if you are indoors?",
     options: [
-      "Avoid practicing drills",
-      "Ignore structural issues",
-      "Secure furniture and shelves",
-      "Open windows during tremors",
-    ],
-    answer: 2,
-  },
-  {
-    question: "During an earthquake, what is the safest action indoors?",
-    options: [
-      "Run to the nearest elevator",
+      "Run outside",
+      "Stand near a window",
       "Drop, cover, and hold on",
-      "Stand near glass windows",
-      "Use furniture for climbing",
+      "Use the elevator to escape",
     ],
-    answer: 1,
+    answer: 2,
+    reason:
+      "Running can lead to injury; most injuries occur from falling objects indoors. 'Drop, Cover, and Hold On' protects your head and body from debris.",
   },
   {
     question:
-      "Which of the following is part of a proper emergency preparedness kit?",
+      "If you are in bed during an earthquake, what is the best response?",
     options: [
-      "Candles and lighters",
-      "Only snacks and soda",
-      "Flashlight, water, and medications",
-      "Electric heater and extension cords",
+      "Get up and run",
+      "Stay in bed and cover your head",
+      "Hide in the closet",
+      "Move near a window",
     ],
-    answer: 2,
+    answer: 1,
+    reason:
+      "Moving increases injury risk. The bed offers some protection; covering your head helps prevent head injuries.",
   },
   {
-    question: "After an earthquake, what should you do if someone is injured?",
+    question: "Why should you avoid using elevators after an earthquake?",
     options: [
-      "Wait for help without doing anything",
-      "Panic and shout for others",
-      "Give first aid and check surroundings",
-      "Leave them and run outside",
+      "Elevators become faster",
+      "Firefighters might need them",
+      "Power failures could trap you",
+      "Elevators may skip floors",
     ],
     answer: 2,
+    reason:
+      "Earthquakes can cut power or damage elevator systems, trapping you inside.",
   },
   {
     question:
-      "Which of the following is a recommended action to prepare for aftershocks?",
+      "Which of the following is NOT a good item for your earthquake emergency kit?",
+    options: ["Flashlight", "Bottled water", "Gasoline", "First-aid kit"],
+    answer: 2,
+    reason:
+      "Gasoline is highly flammable and dangerous to store indoors. The others are essential emergency supplies.",
+  },
+  {
+    question: "After an earthquake, you smell gas. What should you do?",
     options: [
-      "Ignore all safety alerts",
-      "Stay alert and ready to act again",
-      "Turn off emergency radios",
-      "Stay near windows and mirrors",
+      "Turn on the lights",
+      "Light a match to find the leak",
+      "Open windows and leave the building",
+      "Stay inside and call someone",
     ],
-    answer: 1,
+    answer: 2,
+    reason:
+      "Gas leaks can lead to explosions. Ventilate the area and leave immediately. Do NOT use electronics or open flames.",
   },
 ];
 
@@ -62,6 +68,7 @@ export default function EarthquakeQuiz() {
   const [score, setScore] = useState(null);
 
   const handleSelect = (qIndex, optIndex) => {
+    if (score !== null) return;
     const updated = [...selected];
     updated[qIndex] = optIndex;
     setSelected(updated);
@@ -74,16 +81,50 @@ export default function EarthquakeQuiz() {
     setScore(correct);
   };
 
+  const handleReset = () => {
+    setSelected(Array(questions.length).fill(null));
+    setScore(null);
+    window.scrollTo(0, 0);
+  };
+
+  const getOptionClass = (qIndex, optIndex) => {
+    if (score === null) {
+      return selected[qIndex] === optIndex ? "selected" : "";
+    }
+
+    const isCorrect = optIndex === questions[qIndex].answer;
+    const isSelected = selected[qIndex] === optIndex;
+
+    if (isCorrect) return "correct";
+    if (isSelected && !isCorrect) return "wrong";
+    return "";
+  };
+
   const getResultMessage = (score) => {
     if (score === 5)
-      return "⭐ Earthquake Expert: You're well-prepared and know exactly what to do.";
+      return (
+        "🌟 Earthquake Expert\n" +
+        "You’re well-prepared and know exactly what to do before, during, and after an earthquake. Your knowledge could save lives. Keep up the excellent readiness!"
+      );
     if (score === 4)
-      return "👍 Almost There: Review the one you missed and you're solid.";
+      return (
+        "👍 Almost There\n" +
+        "Great job! You have a strong understanding of earthquake safety. Review the one question you missed and keep practicing for full confidence."
+      );
     if (score === 3)
-      return "⚠️ Needs Work: Refresh your knowledge to improve your readiness.";
+      return (
+        "⚠️ Needs a Bit of Work\n" +
+        "You’re on the right path, but there are some gaps in your earthquake preparedness. Review key safety tips and consider doing a quick refresher."
+      );
     if (score === 2)
-      return "⚠️ At Risk: Study the guide again and practice safety steps.";
-    return "❌ Unprepared: Please revisit the Earthquake safety guide immediately.";
+      return (
+        "⚠️ At Risk\n" +
+        "Your current knowledge may not be enough in a real earthquake. Take time to re-learn essential safety steps and make a checklist of what to do."
+      );
+    return (
+      "❌ Unprepared\n" +
+      "You’re highly vulnerable in an earthquake scenario. Please study the safety guides immediately and practice drills with your family or friends."
+    );
   };
 
   return (
@@ -99,13 +140,23 @@ export default function EarthquakeQuiz() {
             {q.options.map((opt, optIndex) => (
               <li
                 key={optIndex}
-                className={selected[qIndex] === optIndex ? "selected" : ""}
+                className={getOptionClass(qIndex, optIndex)}
                 onClick={() => handleSelect(qIndex, optIndex)}
               >
                 {opt}
               </li>
             ))}
           </ul>
+
+          {score !== null && selected[qIndex] !== q.answer && (
+            <motion.p
+              className="quiz-reason"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              <strong>Why?</strong> {q.reason}
+            </motion.p>
+          )}
         </div>
       ))}
 
@@ -120,11 +171,14 @@ export default function EarthquakeQuiz() {
       ) : (
         <motion.div
           className="quiz-result"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
         >
           <h2>You scored {score}/5</h2>
           <p>{getResultMessage(score)}</p>
+          <button className="quiz-retake" onClick={handleReset}>
+            Retake Quiz
+          </button>
         </motion.div>
       )}
     </section>
