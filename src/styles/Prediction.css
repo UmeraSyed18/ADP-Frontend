@@ -137,11 +137,19 @@
 }
 
 .prediction-results {
-  background: var(--color-primary);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   margin-top: 2rem;
+  color: #fff;
+}
+
+.prediction-results.earthquake {
+  background: var(--color-earthquake);
+}
+
+.prediction-results.wildfire {
+  background: var(--color-wildfire);
 }
 
 .prediction-results h2 {
@@ -159,6 +167,7 @@
 
 .prediction-grid p {
   background: var(--color-surface);
+  color: var(--color-text);
   padding: 1rem;
   border: 1px solid #eee;
   border-radius: 10px;

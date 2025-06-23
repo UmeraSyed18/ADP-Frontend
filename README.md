@@ -28,3 +28,71 @@ A responsive React + Vite web app that predicts earthquake and wildfire risks us
 git clone https://github.com/UmeraSyed18/ADP-Frontend.git
 cd ADP-Frontend
 ```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Create environment file**
+
+```bash
+cp .env.example .env
+```
+
+4. **Add your API base URL**
+
+```bash
+# Open .env and set:
+VITE_API_BASE_URL=https://adp-backend-ecto.onrender.com
+```
+
+5. **Start the development server**
+
+```bash
+npm run dev
+```
+
+6. **Build for production**
+
+```bash
+npm run build
+```
+
+7. **Preview production build locally**
+
+```bash
+npm run preview
+```
+
+---
+
+## Project Structure
+
+```bash
+src/
+├── components/        # Navbar, Footer, Layout, UI blocks
+├── pages/             # Home, Prediction, About, News, SafetyHub, Quizzes
+├── styles/            # Global and scoped CSS
+├── assets/            # Images and icons
+├── utils/             # API helpers
+├── main.jsx           # App entry point
+public/                # Static assets
+```
+
+---
+
+## Environment Variables
+
+```bash
+VITE_API_BASE_URL=https://adp-backend-ecto.onrender.com
+```
+
+---
+
+## License
+
+```bash
+MIT License © 2024
+```

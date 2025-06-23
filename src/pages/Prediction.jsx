@@ -9,9 +9,13 @@ export default function Prediction() {
   const [city, setCity] = useState("");
   const [type, setType] = useState("wildfire");
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState(null);
+  const [wildfireResult, setWildfireResult] = useState(null);
+  const [earthquakeResult, setEarthquakeResult] = useState(null);
+  const currentResult = type === "wildfire" ? wildfireResult : earthquakeResult;
+
   const [error, setError] = useState("");
   const [loadingSuggestions, setLoadingSuggestions] = useState(false);
+  const [disableFetch, setDisableFetch] = useState(false);
 
   const [suggestions, setSuggestions] = useState([]);
   const [selectedCity, setSelectedCity] = useState(null);
@@ -23,7 +27,7 @@ export default function Prediction() {
   );
 
   useEffect(() => {
-    if (city.length < 2) {
+    if (city.length < 2 || disableFetch) {
       setSuggestions([]);
       return;
     }
@@ -32,16 +36,19 @@ export default function Prediction() {
       setLoadingSuggestions(true);
 
       axios
-        .get("https://wft-geo-db.p.rapidapi.com/v1/geo/cities", {
-          params: { namePrefix: city, limit: 5, sort: "-population" },
+        .get("https://nominatim.openstreetmap.org/search", {
+          params: {
+            q: city,
+            format: "json",
+            addressdetails: 1,
+            limit: 5,
+          },
           headers: {
-            "X-RapidAPI-Key":
-              "dba9be0d4amsh70d39561afb2c4cp11cc2fjsna8c69d899882",
-            "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
+            "Accept-Language": "en",
           },
         })
         .then((res) => {
-          setSuggestions(res.data.data || []);
+          setSuggestions(res.data || []);
         })
         .catch(() => {
           setSuggestions([]);
@@ -50,12 +57,13 @@ export default function Prediction() {
     }, 500);
 
     return () => clearTimeout(delayDebounce);
-  }, [city]);
+  }, [city, disableFetch]);
 
   const handleSelectSuggestion = (suggestion) => {
-    setCity(`${suggestion.city}, ${suggestion.region}, ${suggestion.country}`);
-    setSelectedCity(suggestion);
+    setCity(suggestion.display_name);
+    setSelectedCity({ city: suggestion.display_name });
     setSuggestions([]);
+    setDisableFetch(true);
   };
 
   const handlePredict = async () => {
@@ -66,7 +74,6 @@ export default function Prediction() {
 
     setLoading(true);
     setError("");
-    setResult(null);
 
     try {
       const res = await axios.post(
@@ -78,7 +85,13 @@ export default function Prediction() {
       );
 
       if (res.data && res.data.status === "success") {
-        setResult(res.data.data);
+        const resultData = res.data.data;
+
+        if (type === "wildfire") {
+          setWildfireResult(resultData);
+        } else {
+          setEarthquakeResult(resultData);
+        }
       } else {
         setError("Prediction failed. Try again.");
       }
@@ -132,8 +145,10 @@ export default function Prediction() {
               onChange={(e) => {
                 setCity(e.target.value);
                 setSelectedCity(null);
+                setDisableFetch(false);
               }}
             />
+
             {loadingSuggestions ? (
               <Spinner />
             ) : (
@@ -141,10 +156,10 @@ export default function Prediction() {
                 <ul className="prediction-suggestions">
                   {suggestions.map((item) => (
                     <li
-                      key={item.id}
+                      key={item.place_id}
                       onClick={() => handleSelectSuggestion(item)}
                     >
-                      {item.city}, {item.region}, {item.country}
+                      {item.display_name}
                     </li>
                   ))}
                 </ul>
@@ -169,51 +184,46 @@ export default function Prediction() {
             <Spinner />
           </div>
         ) : (
-          result && (
+          currentResult && (
             <motion.div
-              className="prediction-results"
+              className={`prediction-results ${type}`}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.4 }}
             >
-              <h2>Predictions for {result.location}</h2>
+              <h2>Predictions for {currentResult.location}</h2>
 
               {type === "earthquake" ? (
                 <div className="prediction-grid">
                   <p>
                     <strong>Next 7 days:</strong>{" "}
-                    {(result["30_day_prob"] / 4).toFixed(2)}%
+                    {(currentResult["30_day_prob"] / 4).toFixed(2)}%
                   </p>
                   <p>
                     <strong>Next 15 days:</strong>{" "}
-                    {(result["30_day_prob"] / 2).toFixed(2)}%
+                    {(currentResult["30_day_prob"] / 2).toFixed(2)}%
                   </p>
                   <p>
-                    <strong>Next 30 days:</strong> {result["30_day_prob"]}%
+                    <strong>Next 30 days:</strong>{" "}
+                    {currentResult["30_day_prob"]}%
                   </p>
                   <p>
-                    <strong>Next 60 days:</strong> {result["60_day_prob"]}%
+                    <strong>Next 60 days:</strong>{" "}
+                    {currentResult["60_day_prob"]}%
                   </p>
                 </div>
               ) : (
                 <div className="prediction-grid">
                   <p>
-                    <strong>Next 30 days:</strong> {result["30_day_prob"]}%
+                    <strong>Next 30 days:</strong>{" "}
+                    {currentResult["30_day_prob"]}%
                   </p>
                   <p>
-                    <strong>Next 60 days:</strong> {result["60_day_prob"]}%
+                    <strong>Next 60 days:</strong>{" "}
+                    {currentResult["60_day_prob"]}%
                   </p>
                 </div>
               )}
-
-              <div className="prediction-location">
-                <p>
-                  <strong>Latitude:</strong> {result.lat_bin}
-                </p>
-                <p>
-                  <strong>Longitude:</strong> {result.lon_bin}
-                </p>
-              </div>
             </motion.div>
           )
         )}

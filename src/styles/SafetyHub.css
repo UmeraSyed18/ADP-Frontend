@@ -1,30 +1,44 @@
 .safetyhub-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
+  min-height: 70vh;
 }
 
 .safetyhub-hero {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 3rem;
   margin-bottom: 3rem;
   align-items: center;
 }
 
+.safetyhub-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
 .safetyhub-hero-text {
   flex: 1 1 500px;
+  text-align: left;
+  max-width: 600px;
 }
 
 .safetyhub-hero-text h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: var(--color-primary);
   margin-bottom: 1rem;
+  line-height: 1.3;
 }
 
 .safetyhub-hero-text p {
   margin-bottom: 1rem;
   color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .safetyhub-hero-image {
@@ -34,90 +48,60 @@
 
 .safetyhub-hero-image img {
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Section Titles */
-
-.safetyhub-block {
-  margin: 3rem 0;
-}
-.safetyhub-block h2 {
-  font-size: 2rem;
-  color: var(--color-secondary);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.safetyhub-section {
-  margin-bottom: 2.5rem;
-}
-
-.safetyhub-section h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
+/* Guide Buttons */
+.safetyhub-guide-buttons {
   display: flex;
-  align-items: center;
-  color: var(--color-primary);
-  font-weight: 600;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.safetyhub-section h3 .icon {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-  display: inline-flex;
-}
-
-/* Bullet List */
-.safetyhub-section ul {
-  padding-left: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-.safetyhub-section ul li {
-  list-style: disc;
-  color: var(--color-text);
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
-  font-size: 0.97rem;
-}
-
-/* Buttons */
-.safetyhub-buttons {
+.safetyhub-guide-btn {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  color: #ffffff;
   text-align: center;
-  margin-top: 2rem;
-}
-
-.safetyhub-btn {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 6px;
-  color: white;
-  text-align: center;
+  min-width: 160px;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.safetyhub-btn:hover {
-  transform: scale(1.05);
+.safetyhub-guide-btn:hover {
+  transform: scale(1.08);
 }
 
-.safetyhub-btn.earthquake {
+.safetyhub-guide-btn.earthquake {
   background-color: var(--color-earthquake);
 }
 
-.safetyhub-btn.wildfire {
+.safetyhub-guide-btn.wildfire {
   background-color: var(--color-wildfire);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .safetyhub-hero-text h1 {
-    font-size: 2rem;
+  .safetyhub-content {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .safetyhub-section h3 {
-    font-size: 1.2rem;
+  .safetyhub-hero-text {
+    text-align: center;
+  }
+
+  .safetyhub-hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .safetyhub-guide-btn {
+    width: 100%;
+    max-width: 320px;
   }
 }

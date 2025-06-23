@@ -148,9 +148,22 @@ export default function EarthquakeQuiz() {
             ))}
           </ul>
 
-          {score !== null && selected[qIndex] !== q.answer && (
+          {/* {score !== null && selected[qIndex] !== q.answer && (
             <motion.p
               className="quiz-reason"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              <strong>Why?</strong> {q.reason}
+            </motion.p>
+          )} */}
+          {score !== null && selected[qIndex] !== null && (
+            <motion.p
+              className={`quiz-reason ${
+                selected[qIndex] === q.answer
+                  ? "correct-reason"
+                  : "wrong-reason"
+              }`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >

@@ -12,8 +12,8 @@ export default function Footer() {
           <div>
             <h2 className="footer-brand-name">DisasterPredict</h2>
             <p className="footer-brand-desc">
-              Accurate AI predictions for Earthquakes and Wildfires to help
-              communities stay safe.
+              AI predictions for Earthquakes and Wildfires to help communities
+              stay safe.
             </p>
           </div>
         </div>

@@ -14,8 +14,8 @@
   --color-text: #111827; /* Charcoal Black */
   --color-muted: #6b7280; /* Slate Gray */
 
-  --color-earthquake: #fb923c; /* Orange (custom) */
-  --color-wildfire: #f87171; /* Red (custom) */
+  --color-earthquake: #eb8220;
+  --color-wildfire: #dc2626;
 
   --font-main: "Inter", "Roboto", "Lato", sans-serif;
   --font-dyslexic: "OpenDyslexic", "Segoe UI", sans-serif;
@@ -36,8 +36,8 @@
   --color-text: #000000; /* Jet Black */
   --color-muted: #4b4b4b;
 
-  --color-earthquake: #0284c7; /* Cyan as alternative to orange */
-  --color-wildfire: #22c55e; /* Bright green for contrast */
+  --color-earthquake: #10b981;
+  --color-wildfire: #3b82f6;
 }
 
 /* ------------------------------
@@ -45,9 +45,9 @@
 --------------------------------*/
 .dyslexia-mode {
   font-family: var(--font-dyslexic);
-  letter-spacing: 0.05em;
-  word-spacing: 0.1em;
-  line-height: 1.75;
+  letter-spacing: 0.1em;
+  word-spacing: 0.2em;
+  line-height: 2;
 }
 
 /* ------------------------------
@@ -65,7 +65,7 @@
   --color-text: #e2e8f0; /* Light gray-blue */
   --color-muted: #94a3b8;
 
-  --color-earthquake: #fbbf24;
+  --color-earthquake: #eb8220;
   --color-wildfire: #ef4444;
 }
 

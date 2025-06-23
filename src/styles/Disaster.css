@@ -1,0 +1,92 @@
+/* Section Wrapper */
+.safetyhub-block {
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Heading */
+.safetyhub-block h2 {
+  font-size: 2rem;
+  /* color: var(--color-secondary); */
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.earthquake-title {
+  color: var(--color-earthquake);
+}
+
+.wildfire-title {
+  color: var(--color-wildfire);
+}
+/* Each Disaster Section */
+.safetyhub-section {
+  margin-bottom: 2.5rem;
+}
+
+/* Subsection Heading */
+.safetyhub-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.safetyhub-section h3 .icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  display: inline-flex;
+}
+
+/* Bullet List */
+.safetyhub-section ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.safetyhub-section ul li {
+  list-style: disc;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  font-size: 0.97rem;
+}
+
+/* Button Section */
+.safetyhub-buttons {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.safetyhub-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.safetyhub-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Button Colors */
+.safetyhub-btn.earthquake {
+  background-color: var(--color-earthquake);
+}
+
+.safetyhub-btn.wildfire {
+  background-color: var(--color-wildfire);
+}
+
+@media (max-width: 768px) {
+  .safetyhub-section h3 {
+    font-size: 1.2rem;
+  }
+}

@@ -8,6 +8,8 @@ import Reports from "./pages/Reports";
 import SafetyHub from "./pages/SafetyHub";
 import EarthquakeQuiz from "./pages/EarthquakeQuiz";
 import WildfireQuiz from "./pages/WildfireQuiz";
+import Earthquake from "./pages/Earthquake";
+import Wildfire from "./pages/Wildfire";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         <Route path="/predict" element={<Prediction />} />
         <Route path="/impact-reports" element={<Reports />} />
         <Route path="/safety-hubs" element={<SafetyHub />} />
+        <Route path="/earthquake" element={<Earthquake />} />
+        <Route path="/wildfire" element={<Wildfire />} />
+
         <Route path="/earthquake-quiz" element={<EarthquakeQuiz />} />
         <Route path="/wildfire-quiz" element={<WildfireQuiz />} />
         <Route path="/about" element={<About />} />
