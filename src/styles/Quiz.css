@@ -56,16 +56,16 @@
 
 /* Correct answer styling (after submit) */
 .quiz-question li.correct {
-  background-color: #10b981; /* emerald green */
+  background-color: var(--color-secondary); /* emerald green */
   color: white;
-  border-color: #10b981;
+  border-color: var(--color-secondary);
 }
 
 /* Wrong answer styling (after submit) */
 .quiz-question li.wrong {
-  background-color: #dc2626; /* red */
+  background-color: var(--color-danger); /* red */
   color: white;
-  border-color: #dc2626;
+  border-color: var(--color-danger);
 }
 
 /* Reason box under wrong answer */
@@ -87,7 +87,7 @@
 .wrong-reason {
   background-color: #fef2f2;
   border-color: var(--color-danger);
-  color: #991b1b;
+  color: var(--color-danger);
 }
 
 .quiz-submit {

@@ -57,11 +57,14 @@
 
 .home-steps {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: 2rem;
 }
 
+.home-arrow-icon {
+  font-size: 3rem;
+}
 .home-step {
   background-color: var(--color-surface);
   border-radius: 12px;
@@ -114,6 +117,12 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .home-steps {
+    flex-direction: column;
+  }
+  .home-arrow-icon {
+    transform: rotate(90deg);
+  }
   .home-step {
     width: 90%;
   }

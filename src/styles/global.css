@@ -28,16 +28,16 @@
   --color-bg: #f4f4f4;
   --color-surface: #ffffff;
 
-  --color-primary: #4b0082; /* Indigo */
-  --color-secondary: #008080; /* Teal Blue */
-  --color-warning: #ffd700; /* Gold */
-  --color-danger: #000080; /* Navy */
+  --color-primary: #005f73; /* Deep Teal */
+  --color-secondary: #ffb703; /* Bright Amber/Yellow */
+  --color-warning: #219ebc; /* Sky Blue */
+  --color-danger: #8e0152; /* Deep Magenta */
 
-  --color-text: #000000; /* Jet Black */
-  --color-muted: #4b4b4b;
+  --color-text: #000000;
+  --color-muted: #5c5c5c;
 
-  --color-earthquake: #00796b;
-  --color-wildfire: #e25822;
+  --color-earthquake: #3d405b; /* Slate Blue */
+  --color-wildfire: #a05195; /* Salmon/Orange */
 }
 
 /* ------------------------------
@@ -45,7 +45,7 @@
 --------------------------------*/
 .dyslexia-mode {
   font-family: var(--font-dyslexic);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
   word-spacing: 0.2em;
   line-height: 2;
 }

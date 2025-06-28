@@ -39,9 +39,9 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/safety-hubs">
+              <Link to="/safety-hub">
                 <IoMdArrowDropright />
-                Safety Hubs
+                Safety Hub
               </Link>
             </li>
             <li>

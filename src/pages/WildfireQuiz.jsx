@@ -152,9 +152,13 @@ export default function WildfireQuiz() {
             ))}
           </ul>
 
-          {score !== null && selected[qIndex] !== q.answer && (
+          {score !== null && selected[qIndex] !== null && (
             <motion.p
-              className="quiz-reason"
+              className={`quiz-reason ${
+                selected[qIndex] === q.answer
+                  ? "correct-reason"
+                  : "wrong-reason"
+              }`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >

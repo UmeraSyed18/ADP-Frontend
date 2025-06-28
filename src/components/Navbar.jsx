@@ -36,7 +36,7 @@ export default function Navbar() {
             <Link to="/impact-reports">Impact Reports</Link>
           </li>
           <li>
-            <Link to="/safety-hubs">Safety Hubs</Link>
+            <Link to="/safety-hub">Safety Hub</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
@@ -108,8 +108,8 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/safety-hubs" onClick={toggleMenu}>
-              Safety Hubs
+            <Link to="/safety-hub" onClick={toggleMenu}>
+              Safety Hub
             </Link>
           </li>
           <li>

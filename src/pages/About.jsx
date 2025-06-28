@@ -15,16 +15,16 @@ export default function About() {
         viewport={{ once: true }}
       >
         <div className="about-text">
-          <h1>About Our Mission</h1>
+          <h1>About this project</h1>
           <p>
             Natural disasters like earthquakes and wildfires are unpredictable —
-            but your preparation doesn’t have to be. Our AI-powered platform is
+            but your preparation doesn’t have to be. This AI-powered platform is
             built to help communities stay ahead of the risk.
           </p>
           <p>
             By combining historical data, intelligent prediction models, and
-            user-friendly education tools, we’re making disaster awareness
-            simple, accessible, and impactful.
+            user-friendly education tools, this project aims to make disaster
+            awareness simple, accessible, and impactful.
           </p>
         </div>
         <motion.div
@@ -54,11 +54,11 @@ export default function About() {
             },
             {
               title: "Localized Insights",
-              text: "We break down risks for individual locations, helping you prepare based on where you live, not general assumptions.",
+              text: "Get risk insights for individual locations, helping you prepare based on where you live, not general assumptions.",
             },
             {
               title: "Preparedness Guides",
-              text: "Learn what to do before, during, and after a disaster — clearly explained with visuals and safety checklists.",
+              text: "Learn what to do before, during, and after a disaster — clearly explained with safety checklists.",
             },
             {
               title: "Interactive Quizzes",
@@ -77,37 +77,6 @@ export default function About() {
               <p>{item.text}</p>
             </motion.div>
           ))}
-        </div>
-      </motion.section>
-
-      <motion.section
-        className="about-hero"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        <motion.div
-          className="about-image"
-          initial={{ scale: 0.8, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <img src={visionimg} alt="AI Disaster Awareness" />
-        </motion.div>
-        <div className="about-text">
-          <h1>Our Vision</h1>
-          <p>
-            We believe awareness is the first step toward safety. Our goal is to
-            make disaster prediction and readiness easy to access,
-            scientifically accurate, and empowering for every individual — no
-            matter where they are.
-          </p>
-          <p>
-            From real-time AI insights to educational resources, we're building
-            a platform that doesn't just inform — it protects.
-          </p>
         </div>
       </motion.section>
     </div>

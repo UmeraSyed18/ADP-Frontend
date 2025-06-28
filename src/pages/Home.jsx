@@ -6,6 +6,7 @@ import "../styles/Home.css";
 import locationimg from "../assets/home/location.png";
 import riskimg from "../assets/home/risk.png";
 import prepareimg from "../assets/home/prepare.png";
+import { MdOutlineDoubleArrow } from "react-icons/md";
 
 export default function Home() {
   return (
@@ -72,6 +73,7 @@ export default function Home() {
               <p>Select your city</p>
             </div>
           </motion.div>
+          <MdOutlineDoubleArrow className="home-arrow-icon" />
 
           {/* Step 2 */}
           <motion.div
@@ -87,6 +89,7 @@ export default function Home() {
               <p>Get probabilities for the next 7, 15, 30 or 60 days.</p>
             </div>
           </motion.div>
+          <MdOutlineDoubleArrow className="home-arrow-icon" />
 
           {/* Step 3 */}
           <motion.div

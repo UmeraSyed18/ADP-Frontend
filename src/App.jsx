@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Prediction from "./pages/Prediction";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import Reports from "./pages/Reports";
 import SafetyHub from "./pages/SafetyHub";
@@ -14,12 +15,13 @@ import Wildfire from "./pages/Wildfire";
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/predict" element={<Prediction />} />
         <Route path="/impact-reports" element={<Reports />} />
-        <Route path="/safety-hubs" element={<SafetyHub />} />
+        <Route path="/safety-hub" element={<SafetyHub />} />
         <Route path="/earthquake" element={<Earthquake />} />
         <Route path="/wildfire" element={<Wildfire />} />
 
